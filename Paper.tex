@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\title{Digital Authoritarianism and Western Foreign Aid}
+\author{Nicholas Ray}
+\date{September 2022}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathtools,amssymb,amsthm}
+\usepackage{setspace}
+\doublespacing
+\usepackage[backend=biber, style=authoryear, maxbibnames=99]{biblatex}
+\renewbibmacro{in:}{}
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}
+  \setunit*{\addnbthinspace}
+  \printfield{number}
+  \setunit{\addcomma\space}
+  \printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\AtEveryBibitem{
+  \clearfield{issn}
+  \clearfield{month}
+  \clearfield{urlyear}
+  \clearlist{language}
+  \clearfield{note}
+  \ifentrytype{online}{}{
+    \clearfield{url}
+  }
+}
+\addbibresource{References.bib}
+\begin{document}
+\maketitle
+\section*{What needs to be explained} 
+China and U.S. in foreign aid competition, with large amounts of money directed toward internet related infrastructure.
+Understand why China wants to give but why the U.S.? And why internet infrastructure? And why now?
+
+\section*{Literature Review}
+
+
+\section*{Theory} 
+U.S. wants to protect American Big Tech markets that are potentially going to be lost in a zero-sum game with Chinese companies (if China successfully shares tech and builds infrastructure).
+
+\textbf{Implications} 
+\begin{align*}
+    H_1a:\; & \text{A pattern should be evident of U.S. money flowing into places where either}\\
+    & \text{Big Tech markets are OR}\\
+    H_1b:\; & \text{Where Chinese influence/money is increasing OR}\\
+    H_2:\; & \text{Where Chinese influence is NOT increasing (U.S. defending markets)}
+\end{align*}
+
+\section*{Alternative Explanations}
+\textbf{Theory}
+
+The U.S. is not concerned necessarily about Big Tech markets, but instead increasing aid in an attempt to thwart China's goals of economic growth abroad.
+
+\textbf{Implication}
+\begin{align*}
+    H_3:\; & \text{There should be a relatively random pattern of spending or at least}\\
+    & \text{a pattern not associated with Big Tech markets}
+\end{align*}
+
+\textbf{Theory}
+
+The U.S. is not necessarily concerned about market access for American Big Tech or China's goal of increasing economic growth through trade/economic diplomacy, but rather trying to counter Chinese money's influence on digital authoritarianism. The U.S. would then be trying to share it's own tech and build it's own internet infrastructure to have more control over the recipient's internet freedom levels.
+
+\textbf{Implication}
+\begin{align*}
+    H_4:\; & \text{U.S. spending patters would be associated with increasing}\\
+    & \text{internet freedom levels and potentially concentrated in places that are}\\
+    & \text{not already receiving tech and infrastructure from China}\\
+\end{align*}
+
+\section*{Methodology}
+Test? Right now I'm thinking of taking data on U.S., Chinese money, internet/social media usage stats and regressing U.S. money on Chinese money and internet/social media usage to try and discern any pattern. Obvious OVB, Simultaneity issues, but we'll keep thinking about it. And note the fact that this is likely a time series (actually panel data), so OLS not satisfactory.
+
+\section*{Complications}
+Data on foreign aid is outdated or only on U.S. and China. (Not G7)
+
+Theoretically, it's difficult to conceive of how to differentiate these patterns and hypotheses. 
+
+\section*{One-Pager}
+The People's Republic of China has been an enduring act on the world stage of the last ten years. Unveiling the Belt and Road Initiative (BRI) in 2013 and then the Digital Silk Road (DSR) in 2015, China has become the world's leading financier, surpassing even the United States in yearly foreign aid expenditures (\cite{dreherND}).
+Investing in the infrastructure of countries across the globe, it is widely believed that these projects are motivated by both the desire for influence and economic growth, with Chinese companies enjoying unprecedented access to international markets.
+
+Remarkably, the U.S. has decided to act. Surrounded by other members of the G7 at their recent summer summit, President Biden announced that \$600 billion will be spent by the member countries over the next five years to explicitly counter China's intentions (\cite{NPR}). Most interestingly, at least a billion of those dollars are officially earmarked for building internet infrastructure. \nocite{US} \nocite{DSR}
+
+It is not ex ante obvious why the U.S. has taken such a keen and expensive interest in competing with Chinese money or why the internet is a significant focus. China, on the other hand, clearly has much to gain from it's behavior given the domestic importance of economic growth and the lure of becoming a top contender for world power. But does the U.S. really feel a similar demand to grow it's political and financial empire? And even if that is the case, why now?
+
+I argue that the U.S. is trying to combat a perceived increase in digital authoritarianism led by Chinese funding and technology while protecting American Big Tech's access to international markets. I speculate that the U.S. views the use of the internet in other countries as a zero-sum game, where the adoption of Chinese tools and infrastructure prevents U.S.-based companies from flourishing. A clue suggesting this new perspective was a declaration made just two months prior to the G7 spending announcement, where the U.S. and 55 other countries committed to push for a democratic use of the internet worldwide (\cite{Declaration}).
+
+Should this explanation for planned G7 foreign aid be true, it implies that Western money should be spent in an observable pattern consistent with these goals. Specifically, current Chinese foreign aid and the location of profitable technology markets should be strong predictors of future Western foreign aid. The comparison of Western aid over time would thus be the goal of this research, with the expectation that aid increases in countries with strong consumer bases and high exposure to Chinese impact. 
+
+The substantive implication of this explanation, should it not be proven false, is the realization that technology and the internet have become central considerations for international politics. Foreign aid, to the extent that it is a strategic endeavor, could be partly determined by cybersecurity concerns and the ability for private firms to profit off of internet activity- motivations that have been largely unconsidered by scholars. A better understanding of these technological incentives might prove salubrious for the predictive power of political science as the internet and AI continue to grow in prominence.
+\printbibliography
+\end{document}
