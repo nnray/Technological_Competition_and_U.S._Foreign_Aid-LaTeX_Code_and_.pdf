@@ -7,7 +7,7 @@
 \usepackage{mathtools,amssymb,amsthm}
 \usepackage{setspace}
 \doublespacing
-\usepackage[backend=biber, style=authoryear, maxbibnames=99]{biblatex}
+\usepackage[backend=biber, style=authoryear, maxbibnames=99,uniquelist=false]{biblatex}
 \renewbibmacro{in:}{}
 \renewbibmacro*{volume+number+eid}{%
   \printfield{volume}
@@ -22,6 +22,8 @@
   \clearfield{urlyear}
   \clearlist{language}
   \clearfield{note}
+  \clearfield{month}
+  \clearfield{day}
   \ifentrytype{online}{}{
     \clearfield{url}
   }
@@ -30,16 +32,20 @@
 \begin{document}
 \maketitle
 \section*{Introduction}
-U.S.'s history of concern over global internet freedom. (Brookings, Rand, Congressional Bill, Declaration, Partnership for Global Infrastructure and Investment).
-Given the U.S.'s history of concern over global internet freedom, how has U.S. foreign policy changed in response to China's involvement in developing countries? 
-While there has been a wealth of academic attention on the potential effects of China's BRI (e.g., good journal articles), few have focused on how it might have shifted U.S. foreign policy. It is reasonable to expect that China's program would have \textit{some} effect on U.S. policy since 1) China's program is drawing attention from U.S. (Partnership, Declaration; and it could potentially be negatively affecting internet freedom) and 2) research has shown that U.S. aid is effective in promoting democracy despite Chinese aid prevalence (Blair, Marty, Roessler 2021).
+The United States (U.S.) has been openly concerned about the internet since at least 1997, when President Bill Clinton exhorted the world to adopt a laissez-faire, commercially friendly approach to the internet (\cite{government1997}). By the 2000's, these preferences for a ``free'' internet were officially crystallized into foreign policy initiatives as internet freedom programs cropped up in different facets of the U.S. government, such as the Department of State (e.g., \cite{government2021}) and the U.S. Agency for Global Media (\cite{government2022d}). U.S. attention to internet freedom continued to grow throughout the 2010's, with Secretary of State Hillary Clinton calling for internet freedom abroad (\cite{government2010}) and President Obama defending a version of it at home (\cite{government2016}) and overseas (\cite{richburg2009}).
+
+Today internet freedom has seemingly reached a crescendo in U.S. foreign policy. Bipartisan legislation was introduced in the Senate to increase funding to internet freedom programs (\cite{government2022a}), a declaration was signed by the U.S. and over 60 other countries to combat ``digital authoritarianism'' (\cite{government2022b}), and an unprecedented, U.S.-led G7 spending plan was unveiled to improve physical and digital infrastructure abroad (\cite{government2022c})- all in 2022. 
+
+Along the way, the People's Republic of China (China) and the Russian Federation (Russia) have been named the antagonists to global internet freedom and the explicit motivations behind the U.S.'s focus on the subject. During this intensifying period of U.S. apprehension of digital authoritarianism, China launched it's Belt and Road Initiative (BRI) in 2013 and the accompanying Digital Silk Road Initiative (DSR) in 2015. Collectively, these projects have catalyzed over one trillion U.S. dollars in developing-country investment with the intent to improve China's perception and influence in the world while fostering it's domestic economic growth (\cite{dreher2022}).
+
+Ample academic work has recently attempted to outline the effects of China's aid program (e.g., \cite{gehring2022}; \cite{dreher2018}; \cite{blair2021}). Yet, little research has explored the potential effects of China's spending on U.S. foreign policy. In this paper, I seek to understand if U.S. foreign aid, an important aspect of foreign policy, can be understood as a response to China's aid ambitions. Specifically, I hypothesize that U.S. foreign aid to Africa is related to a recipient's internet freedom level and their influx of Chinese aid.
 
 \section*{Literature Review}
-Most foreign aid allocated to self-interest and not recipient need (\cite{hoeffler_need_2011})
+Most foreign aid allocated to self-interest and not recipient need (\cite{hoeffler2011})
 
 Aid ineffectiveness in achieving economic growth or promoting democratic institutions (Chong, Gradstein, Calderon)
 
-Aid from U.S. successful in promoting democracy (Blair, Marty, Roessler 2021)
+Aid from U.S. successful in promoting democracy (\cite{blair2022})
 
 Aid from U.S. tends to be more effective in countries that receive no substantial support from China (so we should see funding directed towards countries lacking Chinese aid already)(Dreher et al 2021 AER)
 
@@ -59,12 +65,16 @@ Political economic factors can shape preferences for foreign aid in U.S. (Milner
 
 \section*{Methodology}
 Dependent variable: US Aid
+
 Main explanatory variables: Chinese Aid, Internet Freedom
+
 Controls (according to Cinelli et al.): GDP per capita (recipient need), Internet Usership (Internet development indicators), Political Freedom (possible confounder)
 
 Chinese data set (Custer et al. 2021; Dreher et al. 2022 (Banking on Beijing))
 
 If concerned about simultaneity between US aid and Internet Freedom, maybe use instrument related to Internet Freedom but not to US aid. 
+
+DiD? With two countries that have similar levels of Internet Freedom and Chinese aid (parallel trends) and then both experience increases in Chinese aid?
 \section*{Complications}
  
 
