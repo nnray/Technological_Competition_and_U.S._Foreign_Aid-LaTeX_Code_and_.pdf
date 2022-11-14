@@ -1,36 +1,3 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\title{\vspace{-2.75cm}Digital Authoritarianism and United States Foreign Aid\vspace{-0.5cm}}
-\author{Nicholas Ray}
-\date{\vspace{-0.30cm}October 2 2022\vspace{-1cm}}
-\usepackage[margin=1in]{geometry}
-\usepackage{mathtools,amssymb,amsthm}
-\usepackage{setspace}
-\doublespacing
-\usepackage[backend=biber, style=authoryear, maxbibnames=99,uniquelist=false]{biblatex}
-\renewbibmacro{in:}{}
-\renewbibmacro*{volume+number+eid}{%
-  \printfield{volume}
-  \setunit*{\addnbthinspace}
-  \printfield{number}
-  \setunit{\addcomma\space}
-  \printfield{eid}}
-\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
-\AtEveryBibitem{
-  \clearfield{issn}
-  \clearfield{month}
-  \clearfield{urlyear}
-  \clearlist{language}
-  \clearfield{note}
-  \clearfield{month}
-  \clearfield{day}
-  \ifentrytype{online}{}{
-    \clearfield{url}
-  }
-}
-\addbibresource{ForeignAidBib.bib}
-\begin{document}
-\maketitle
 \section*{Introduction}
 The United States (U.S.) has been openly concerned about the internet since at least 1997, when President Bill Clinton exhorted the world to adopt a laissez-faire, commercially friendly approach to the internet (\cite{government1997}). By the 2000's, these preferences for a ``free'' internet were officially crystallized into foreign policy initiatives as so-called ``internet freedom'' programs cropped up in different facets of the U.S. government, such as the Department of State (e.g., \cite{henry2014}; \cite{government2021a}) and the U.S. Agency for Global Media (\cite{government2022}).
 
@@ -95,14 +62,3 @@ Secondly, there is potential simultaneity between U.S. foreign aid and internet 
 It is possible that there is no meaningful association between U.S. foreign aid and internet freedom. The lack of association would in itself present a sort of puzzle, though, since the U.S. clearly has a foreign policy interest in maintaining internet freedom and a seemingly effective tool of foreign aid to pursue that interest. It may take time, however, for the ever-increasing advances in U.S. financial commitment to internet freedom to be reflected in spending data.  
 
 If there is indeed a relationship, I speculate that the U.S. is interested in keeping the internet free because it is good for business. There is evidence that China is sharing it's technology, like censorship and monitoring tools, that could allow more authoritarian-leaning developing countries to prevent the use of U.S. technology and to strictly allow for Chinese substitutes instead. These developing countries would then harness the economic benefits of the internet, like job growth, while constraining potentially negative political externalities such as the free assembly of anti-incumbent online groups. China would stand to gain domestic economic growth as it's technology firms expand beyond it's borders, and everybody wins- except the U.S.
-
-\nocite{mechkova2022a}
-\nocite{pemstein2022}
-\nocite{coppedge2022}
-\nocite{coppedge2022a}
-\nocite{coppedge2022b}
-\nocite{coppedge2022c}
-\nocite{coppedge2022d}
-\pagebreak
-\printbibliography
-\end{document}
