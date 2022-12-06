@@ -1,0 +1,235 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\title{\vspace{-2.75cm}Conflating Global Finance with Technological Competition: The U.S.'s Reaction to Chinese Foreign Aid\vspace{-0.5cm}}
+\author{Nicholas Ray}
+\date{\vspace{-0.30cm}December 7 2022\vspace{-1cm}}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathtools,amssymb,amsthm}
+\usepackage{setspace}
+\doublespacing
+\usepackage{footmisc}
+\renewcommand{\footnotelayout}{\setstretch{1.75}}
+\usepackage{footmisc}
+\renewcommand{\footnotesize}{\normalsize}
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,shapes.symbols,chains}
+\usepackage{blindtext}
+\usepackage{istgame}
+\usepackage[backend=biber, style=authoryear, maxbibnames=99,uniquelist=false]{biblatex}
+\renewbibmacro{in:}{}
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}
+  \setunit*{\addnbthinspace}
+  \printfield{number}
+  \setunit{\addcomma\space}
+  \printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\AtEveryBibitem{
+  \clearfield{issn}
+  \clearfield{month}
+  \clearfield{urlyear}
+  \clearlist{language}
+  \clearfield{note}
+  \clearfield{month}
+  \clearfield{day}
+  \ifentrytype{online}{}{
+    \clearfield{url}
+  }
+}
+\addbibresource{ForeignAidBib.bib}
+\begin{document}
+\maketitle
+\begin{abstract}
+    Emphasize policy! \blindtext
+\end{abstract}
+
+\textit{Keywords}: Foreign Aid, Internet Governance, Africa
+
+\section*{Introduction}
+\footnote{All data and code can be found on GitHub at https://github.com/nnray/Analysis. In the ``Code'' folder, navigate to ``628.Rmd'' for my R script. My full \LaTeX \;file can be found at https://github.com/nnray/628 under ``Paper.tex''.}
+
+\section*{What Needs Explaining?}
+%U.S. digital infrastructure spending, other aid related to ICT/internet
+The U.S. has been increasingly funding digital infrastructure in countries around the world. In 2022, for example, the U.S. initiated the Partnership for Global Infrastructure and Investment (PGII) in collaboration with the other members of the Group of Seven (G7) that aims to spend \$600 billion on global infrastructure projects over the next five years (\cite{thewhitehouse2022}). Included in the PGII is a \$600 million contract to a U.S. telecommunications company to build submarine internet cables that connect Singapore to France via Egypt and the Horn of Africa. %other U.S. examples? IF programs? 
+
+%Chinese digital infrastructure spending
+This intention of the U.S. to build digital infrastructure closely resembles the behavior of China over the past two decades. Since engaging in their ``going out'' strategy of investing overseas to promote domestic economic growth, China has turned to funding massive infrastructure projects through its Belt and Road Initiative (BRI) and becoming the ``lender of first resort'' for developing countries (\parencite[1]{dreher2022}). Two years after announcing the BRI, China launched the largely symbolic (\cite{tugendhat2021}) Digital Silk Road (DSR) that still encapsulates China's desire to build global digital infrastructure favorable to them (\cite{shen2022}). Some examples of relevant Chinese projects are shown in table 1 \nocite{agbebi2022}.
+
+\subsubsection*{Table 1}
+\begin{figure}[htbp]
+    \includegraphics[scale=0.449]{Figures/ChineseAid.png}
+    \captionof{table}{Agbebi 2022}
+\end{figure}
+
+%the competition between U.S. and Chinese technology, digital infrastructure spending
+However, the U.S. and China do not seem to be cooperating in the effort to improve digital infrastructure worldwide. Just months before the PGII announcement, the U.S. pioneered a thinly veiled condemnation of China in the Declaration for the Future of the Internet in which more than 60 countries signed a pledge to engage in liberal internet governance (\cite{u.s.departmentofstate2022}). Further, policy analysts and scholars have a highlighted a U.S. concern over Chinese spending (\cite{hass2021}; \cite{triolo2020}; \cite{hillman2021}). But why exactly is the U.S. attempting to compete with China in foreign spending and why the digital aspect? %need more work here
+
+\section*{Extant Explanations}
+For a comprehensive but not exhaustive overview of the literature on foreign aid determinants, see Fuchs, Dreher, and Nunnenkamp 2014 \nocite{fuchs2014} (Table 1, p. 173). Simplistically, the foreign aid literature has explained donor behavior as the result of either recipient need or self-interested motivations, with the self-interested reasons being categorizable as political or economic. Focusing on the determinants of U.S. foreign aid, I argue that the extant explanations do not fully capture either the technology focus of current U.S. aid behavior or the antagonistic nature of said behavior. 
+
+There is evidence that the U.S. takes recipient need into account when allocating aid. Measured primarily as gross domestic product (GDP) per capita, Hoeffler and Outram (2011) \nocite{hoeffler2011} show that the U.S. spends more on poorer countries and that it matters little if there exists human rights abuses or non-democratic rule. Theoretically, U.S. spending on digital infrastructure could certainly contain some intention to meet recipient need and provide better technology, but it is not clear why the U.S. would be be in opposition to China's own digital infrastructure spending if that were the case. %mckinlay and buthe
+
+The traditional account of U.S. aid behavior though focuses on self-interested motivations (e.g., \cite{mckinlay1977}). Economically, it has been theorized that the U.S. gives aid to countries that liberalize trade (\cite{alesina2000}) or export goods to the U.S. (\cite{younas2008}; \cite{fuchs2014}). It is also often stipulated that the U.S. is interested in economic growth (e.g., \cite{bearce2010b}). In this lighting, perhaps the U.S. is simply keen on stimulating economic growth in recipient countries since there is evidence that the internet is beneficial for developing economies (e.g., see \cite{wallsten2005}). However, economic motivations also do not explain why the U.S. should be opposed to Chinese spending. In fact, it would seem that the U.S. should theoretically be in favor of Chinese aid since there is evidence that Chinese aid procures economic growth in recipient countries (\cite{dreher2021}).
+
+Politically, numerous authors highlight how counter-terrorism in the wake of the September 11$^{th}$ attacks resulted in an increase in U.S. aid after post-Cold War declines (e.g., \cite{fleck2010}; \cite{bearce2010b}). There have been mixed findings on how the democratic status of recipients and how voting records in the United Nations (UN) influences U.S. aid. Some scholars find a positive relationship between U.S. aid and recipient democracy (\cite{alesina2000}) or for the influence of similar UN voting patterns (\cite{alesina2000}; \cite{fuchs2014}), while others find substantially weaker evidence for both (\cite{hoeffler2011}). Meanwhile, there is no evidence that the U.S. factors in the human rights record of recipients (\cite{hoeffler2011}). It is possible that the U.S. is returning to a Cold War foreign aid mindset, where the aid they give is entirely concerned with strategically opposing their adversary (\cite{bearce2010b}). This would explain the antagonism with China, but not why there should be contention surrounding digital infrastructure and technology. %tingley, brech, fleck, dietrich
+
+\section*{My Explanation}
+I contend that an explanation of current U.S. foreign spending behavior that addresses both why it has a strong focus on technology and why this focus seems opposed to China should be based on both political and economic determinants related to technology. Specifically, I argue that the U.S. has a policy preference for more liberal internet governance, or the rules and norms surrounding the internet in a country,  because a liberal internet enables Western technology to operate within that country. That is, I claim that U.S. aid can be described by the political determinant of liberal internet governance and the economic determinant of market access for Western technology firms. 
+
+I will next define internet governance and why it is a political determinant for U.S. aid. Internet governance was defined in the second phase of the World Summit on the Information Society (WSIS), a meeting led by the UN's International Telecommunication Union (ITU), which was held in Tunis, Tunisia in 2005. It is ``the development and application by governments, the private sector and civil society, in their respective roles, of shared principles, norms, rules, decision-making procedures, and programmes that shape the evolution and use of the Internet'' \nocite{worldsummitontheinformationsociety2005} (World Summit on the Information Society 2005, item 34). Essentially, internet governance refers to the way in which governments, firms, and citizens interact with the internet.
+
+The U.S. is concerned about internet governance because there is evidence that the West believes China to be spreading its illiberal model of the internet (e.g., \cite{hillman2021}; \cite{u.s.departmentofstate2022}), or at least that there is a good chance for it to (\cite{triolo2020}).
+
+However, I argue that the U.S. focus on internet governance is not simply about the politics of a liberal internet, such as preferences for democracy or human rights. Firstly, according to the literature there is little evidence that U.S. government aid discriminates much along the lines of human rights (\cite{hoeffler2011}) or even democracy (\cite{alesina2000}; \cite{hoeffler2011}). Rather, I argue that the U.S.'s interest in propping up internet governance around the world chiefly lies in the desire to prevent countries of using the internet in a manner similar to China (\cite{hass2021}), which is more likely to occur with the increase in global Chinese spending.
+
+\section*{Implications}
+If U.S. foreign spending is truly concerned with internet governance and the economic benefits of inhibiting China's suspected illiberal influence, then it should also be true that the internet governance of potential recipients should be a strong predictor of U.S. foreign aid over time. This implication leads to the following hypothesis:
+\begin{align*}
+    H_{1}&:\;\text{U.S. aid should be empirically related to recipient internet governance}\\
+\end{align*}
+
+\section*{Empirics}
+I test this hypotheses by regressing U.S. foreign aid on a measure of internet governance, Chinese aid and controls across 44 African countries between 2010 and 2017. The full set of countries includes: Algeria, Angola, Benin, Botswana, Burundi, Cabo Verde, Cameroon, Central African Republic, Chad, Comoros, Republic of the Congo, Cote d'Ivoire, Democratic Republic of the Congo, Djibouti, Egypt, Equatorial Guinea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia, Madagascar, Malawi, Mali, Mauritania, Mauritius, Morocco, Mozambique, Namibia, Niger, Nigeria, Rwanda, Senegal, Sierra Leone, South Africa, Togo, Tunisia, Uganda, Zambia, and Zimbabwe. 
+
+I chose to focus on Africa during this time period for three main reasons. Firstly, Africa has been a major area of focus for China's finance projects, with the Council on Foreign Relations claiming that ``China already provides more financing for information and communications technology than all multilateral agencies and leading democracies combined do across the continent'' (\cite{kurlantzicketal.2020}). Secondly, the data I use for Chinese spending ends in 2017. Thirdly, while 2010 is indeed an arbitrary starting point, it seems like a reasonable choice since both Chinese aid and the internet diminish greatly before this period.
+
+\subsection*{Data and Variables}
+%internet freedom
+In operationalizing my theory, I measure internet governance as ``internet freedom'' from the Digital Society Project (DSP) index. The DSP aims to identify ``how people use social media as a political tool and to explore how political institutions and social media use interact,'' providing data from expert surveys that cover a range of topics such as censorship, disinformation, and monitoring (\cite{mechkova2022}). The DSP employs methodology designed by the Varieties of Democracy project (V-Dem, \cite{coppedge2022}) to try and estimate differences in expert opinion and knowledge.
+
+The DSP is one of two indices measuring a the concept of internet governance and data from the DSP is potentially superior for measuring the concept of internet liberalism in Africa compared to the primary alternative, Freedom on the Net (FOTN, \cite{freedomhouse2022}). FOTN frequently features missing data for the continent of Africa and does not take into account possible variations in expert opinion and knowledge like the DSP does.
+
+%Chinese aid
+The other main explanatory variable is Chinese foreign aid, stemming from the College of William \& Mary's AidData research lab (\cite{custer2021}). This is the one of the only datasets on Chinese aid and is certainly the largest and most specific. Aid is quantified as official financial and in-kind commitments and is collected using a methodology designed to track under-reported aid flows, such as those from China.
+
+%U.S. aid
+U.S. foreign aid is the dependent variable, measured as fiscal-year disbursements (\cite{u.s.agencyforinternationaldevelopment2022}). This data was more up-to-date than alternatives.
+
+%controls
+For controls, I include gross domestic product GDP per capita, an indicator for internet development, and a measure for political freedom as controls. Each of these phenomena are possible confounders, being theoretically related to at least one of the types of aid and internet freedom. 
+
+GDP per capita is supplied by the United Nations (\cite{unitednationsstatisticsdivision2019}) while the indicator for internet development is provided by the ITU (\cite{internationaltelecommunicationunion2022}). This indicator is a proxy for how developed the internet is in a country and represents the percentage of the population using the internet. Lastly, the chosen measure for political freedom comes from Polity (\cite{marshall2018}).
+
+Using a GDP deflator (\cite{organizationforeconomicco-operationanddevelopment2022}), the values for U.S. aid, Chinese aid, and GDP per capita are all in constant 2015 USD.
+
+%Missing data
+Of the 10 African countries I am missing data for, the DSP is missing values for Somalia, Eritrea, Sudan, and South Sudan, which might make sense given that Somalia and South Sudan were both at civil war during the observation period while Sudan and Eritrea have experienced instability after previous wars. Similarly, Libya was missing data from the ITU following the Western invasion of Libya in 2011. However, it is unclear why Sao Tome and Principe and Seychelles are missing Polity data, why Burkina Faso and Eswatani are missing Chinese aid data, or why Tanzania is missing GDP data.
+
+%add discussion of larger descriptive stats table
+Descriptive statistics can be seen in table 2 and 3 below. It should be noted that the variable logged Chinese aid is mostly zeroes, as can be seen again in figure 4. I performed Grubbs' tests for outliers and indeed, the highest values for logged Chiense aid are outliers from the modal zero. All other variables, though, support ample variation and are stationary or trendstationary by themselves. 
+
+\subsubsection*{Table 2}
+\begin{figure}[htbp]
+    \includegraphics[scale=0.8]{Figures/628table2.png}
+\end{figure}
+\pagebreak
+
+Description.
+\subsubsection*{Table 3}
+\begin{figure}[htbp]
+    \includegraphics[scale=0.45]{Figures/summary.png}
+\end{figure}
+
+\pagebreak
+A correlation matrix of the variables included in my regressions is given in Figure 2. As can be seen, there are a couple relatively strong relationships between the variables. The variable for regime type, Polity, has a correlation of 0.62 with the internet freedom variable while logged GDP per capita has a correlation of 0.65 with the variable representing the percent of the population using the internet. While possible, I do not think that these correlations are high enough to warrant concerns over multicollinearity or the lack of linear independency in the data. Interestingly, logged U.S. Aid appears somewhat negatively correlated with logged GDP per capita and variable for the percent using the internet is somewhat positively correlated to that for internet freedom. However, all of these correlations are relatively small and should not induce concerns for multicollinearity, although I did not conduct a formal test for multicollinearity.
+
+\pagebreak
+\subsubsection*{Figure 2}
+\begin{figure}[htbp]
+    \includegraphics[scale=0.7]{Figures/628plot3.png}
+\end{figure}
+
+\subsection*{Estimation}
+I chose to use ordinary least squares (OLS) for my estimator while employing two-way fixed effects at the country and year level. In choosing fixed effects, I used non-nested model comparison tests that suggested fixed effects to be superior to both no effects and random effects. After testing for heteroskedasticity, I included country-clustered standard errors. %look at the as.factor(years) as evidence of relationship getting stronger over time?
+
+\pagebreak
+\section*{Results}
+Table 2 displays regression results from a model with and without an interaction between internet freedom and logged Chinese foreign aid.
+\subsection*{Table 4}
+\begin{table}[!htbp] \centering 
+  \caption*{Logged U.S. Aid and Covariates with Two-way Fixed Effects and Clustered SE's on Country}
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{Logged U.S. Aid} \\ 
+\cline{2-3} 
+ & Model 1 & Model 2 \\ 
+\hline \\[-1.8ex] 
+ Internet Freedom & 0.021$^{***}$ & 0.021$^{***}$ \\ 
+  & (0.008) & (0.008) \\ 
+  & & \\ 
+ Logged Chinese Aid & 0.006$^{*}$ & 0.006$^{*}$ \\ 
+  & (0.003) & (0.003) \\ 
+  & & \\ 
+ Logged GDP per Capita & 0.045 & 0.045 \\ 
+  & (0.471) & (0.472) \\ 
+  & & \\ 
+ Percent Using Internet & $-$0.013 & $-$0.013 \\ 
+  & (0.009) & (0.009) \\ 
+  & & \\ 
+ Polity & 0.004 & 0.004 \\ 
+  & (0.031) & (0.031) \\ 
+  & & \\ 
+ Internet Freedom $\cdot$ Logged Chinese Aid &  & 0.00000 \\ 
+  &  & (0.0002) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 352 & 352 \\ 
+R$^{2}$ & 0.038 & 0.038 \\ 
+Adjusted R$^{2}$ & $-$0.140 & $-$0.144 \\ 
+F Statistic & 2.370$^{**}$ (df = 5; 296) & 1.968$^{*}$ (df = 6; 295) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+\pagebreak
+
+The only covariates that appear statistically significant are internet freedom and Chinese spending. Both internet freedom and logged Chinese aid seem to increase logged U.S. aid on average when accounting for the other covariates. To gauge the substantive size of the coefficients, I plot the marginal effect of internet freedom on logged U.S. aid in Figure 3 and the marginal effect of logged Chinese aid on logged U.S. aid in Figure 4.
+
+Support for $H_1$?
+
+Interestingly, there is a lack of support for an interaction between internet freedom and logged Chinese aid. Apparently, the effects of a recipient's internet freedom level and the amount of Chinese aid they are receiving have completely separate effects on U.S. aid. However, it is unclear how consequential this lack of support for the interaction term is, since both variables by themselves are significant and two-way fixed effects are used.
+
+\pagebreak
+Figure 3 shows the marginal effect of internet freedom on logged U.S. foreign aid. The coefficient on the internet freedom variable is 0.0206, implying that a one unit increase in a recipient's internet freedom level is associated with an increase in U.S. aid by 2.08 percent on average, accounting for other covariates. This appears to be a substantively large effect.
+
+\subsection*{Figure 3}
+\begin{figure}[htbp]
+    \includegraphics[scale=0.7]{Figures/628plot1.png}
+\end{figure}
+
+\pagebreak
+Figure 4 graphs the marginal effect of logged Chinese foreign aid on logged U.S. foreign aid. The coefficient on the variable for logged Chinese foreign aid is 0.0058, implying that a one percent increase in Chinese aid is associated with a 0.0058 percent increase in U.S. aid on average, accounting for other covariates. This does not appear to be a substantively large effect.
+
+\subsection*{Figure 4}
+\begin{figure}[htbp]
+    \includegraphics[scale=0.7]{Figures/628plot2.png}
+\end{figure}
+\pagebreak 
+
+\section*{Discussion}
+Discuss contribution and implications of support for $H_1$ in light of the literature on foreign aid and LIO.
+
+
+
+\section*{Conclusion}
+In this article I argue that . In particular, .
+
+Analyzing 44 African countries from 2010-2017, I find .
+
+I suggest the following future work: Expanding sample to LA Extending years to 2000 Robustness checks with different measurements Greater differntiation between types of aid and money 
+
+\nocite{mechkova2022a}
+\nocite{pemstein2022}
+\nocite{coppedge2022}
+\nocite{coppedge2022a}
+\nocite{coppedge2022b}
+\nocite{coppedge2022c}
+\nocite{coppedge2022d}
+\nocite{curini2020}
+\pagebreak
+\printbibliography
+\end{document}
