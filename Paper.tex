@@ -7,6 +7,7 @@
 \usepackage{mathtools,amssymb,amsthm}
 \usepackage{setspace}
 \doublespacing
+\usepackage[colorlinks,citecolor=cyan,urlcolor=blue,bookmarks=false,hypertexnames=true]{hyperref}
 \usepackage{footmisc}
 \renewcommand{\footnotelayout}{\setstretch{1.75}}
 \usepackage{footmisc}
@@ -37,6 +38,17 @@
     \clearfield{url}
   }
 }
+\DeclareCiteCommand{\citeyear}
+    {\usebibmacro{prenote}}
+    {\bibhyperref{\printfield{year}}\bibhyperref{\printfield{extrayear}}}
+    {\multicitedelim}
+    {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\citeyearpar}[\mkbibparens]
+    {\usebibmacro{prenote}}
+    {\bibhyperref{\printfield{year}}\bibhyperref{\printfield{extrayear}}}
+    {\multicitedelim}
+    {\usebibmacro{postnote}}
 \addbibresource{ForeignAidBib.bib}
 \begin{document}
 \maketitle
@@ -58,7 +70,7 @@ I proceed as follows. In the next section, I introduce puzzling observations of 
 The U.S. has been increasingly funding digital infrastructure in countries around the world. In 2022, for example, the U.S. initiated the Partnership for Global Infrastructure and Investment (PGII) in collaboration with the other members of the Group of Seven (G7) that aims to spend \$600 billion on global infrastructure projects over the next five years (\cite{thewhitehouse2022}). Included in the PGII is a \$600 million contract to a U.S. telecommunications company to build submarine internet cables that connect Singapore to France via Egypt and the Horn of Africa. %other U.S. examples? IF programs? 
 
 %Chinese digital infrastructure spending
-This intention of the U.S. to build digital infrastructure closely resembles the behavior of China over the past two decades. Since engaging in their ``going out'' strategy of investing overseas to promote domestic economic growth, China has turned to funding massive infrastructure projects through its Belt and Road Initiative (BRI) and becoming the ``lender of first resort'' for developing countries \parencite[1]{dreher2022}. Two years after announcing the BRI, China launched the largely symbolic (\cite{tugendhat2021}) Digital Silk Road (DSR) that still encapsulates China's desire to build global digital infrastructure favorable to them (\cite{shen2022}). Some examples of relevant Chinese projects are shown in table 1 \nocite{agbebi2022}.
+This intention of the U.S. to build digital infrastructure closely resembles the behavior of China over the past two decades. Since engaging in their ``going out'' strategy of investing overseas to promote domestic economic growth, China has turned to funding massive infrastructure projects through its Belt and Road Initiative (BRI) and becoming the ``lender of first resort'' for developing countries \parencite[1]{dreher2022}. Two years after announcing the BRI, China launched the largely symbolic (\cite{tugendhat2021}) Digital Silk Road (DSR) that still encapsulates China's desire to build global digital infrastructure favorable to them (\cite{shen2022}). Some examples of relevant Chinese projects are shown in table 1 (from \cite{agbebi2022}).
 
 \subsubsection*{Table 1}
 \begin{figure}[htbp]
@@ -70,9 +82,9 @@ This intention of the U.S. to build digital infrastructure closely resembles the
 However, the U.S. and China do not seem to be cooperating in the effort to improve digital infrastructure worldwide. Just months before the PGII announcement, the U.S. pioneered a thinly veiled condemnation of China in the Declaration for the Future of the Internet in which more than 60 countries signed a pledge to engage in liberal internet governance (\cite{u.s.departmentofstate2022}). Further, policy analysts and scholars have a highlighted a U.S. concern over Chinese spending (\cite{hass2021}; \cite{triolo2020}; \cite{hillman2021}). Consequently, it appears that the U.S. and China are both separately spending on digital infrastructure projects while the U.S. actively opposes China's doing so.
 
 \section*{Extant Explanations}
-There are some tentative explanations offered by the global finance literature for this competitive spending behavior surrounding technology. For a comprehensive but not exhaustive overview of the literature on foreign aid determinants, see Fuchs, Dreher, and Nunnenkamp 2014 \nocite{fuchs2014} (Table 1, p. 173). Simplistically, the foreign aid literature has explained donor behavior as the result of either recipient need or self-interested motivations, with the self-interested reasons being categorizable as political or economic. Focusing on the determinants of U.S. foreign aid, I argue that the extant explanations do not fully capture either the technology focus of current U.S. aid behavior or the antagonistic nature of said behavior. 
+There are some tentative explanations offered by the global finance literature for this competitive spending behavior surrounding technology. For a comprehensive but not exhaustive overview of the literature on foreign aid determinants, see Fuchs, Dreher, and Nunnenkamp (\citeyear{fuchs2014} p. 173). Simplistically, the foreign aid literature has explained donor behavior as the result of either recipient need or self-interested motivations, with the self-interested reasons being categorizable as political or economic. Focusing on the determinants of U.S. foreign aid, I argue that the extant explanations do not fully capture either the technology focus of current U.S. aid behavior or the antagonistic nature of said behavior. 
 
-There is evidence that the U.S. takes recipient need into account when allocating aid. Measured primarily as gross domestic product (GDP) per capita, Hoeffler and Outram (2011) \nocite{hoeffler2011} show that the U.S. spends more on poorer countries and that it matters little if there exists human rights abuses or non-democratic rule. Theoretically, U.S. spending on digital infrastructure could certainly contain some intention to meet recipient need and provide better technology, but it is not clear why the U.S. would be be in opposition to China's own digital infrastructure spending if that were the case. %mckinlay and buthe
+There is evidence that the U.S. takes recipient need into account when allocating aid. Measured primarily as gross domestic product (GDP) per capita, Hoeffler and Outram (\citeyear{hoeffler2011}) show that the U.S. spends more on poorer countries and that it matters little if there exists human rights abuses or non-democratic rule. Theoretically, U.S. spending on digital infrastructure could certainly contain some intention to meet recipient need and provide better technology, but it is not clear why the U.S. would be be in opposition to China's own digital infrastructure spending if that were the case. %mckinlay and buthe
 
 The traditional account of U.S. aid behavior though focuses on self-interested motivations (e.g., \cite{mckinlay1977}). Economically, it has been theorized that the U.S. gives aid to countries that liberalize trade (\cite{alesina2000}) or export goods to the U.S. (\cite{younas2008}; \cite{fuchs2014}). It is also often stipulated that the U.S. is interested in economic growth (e.g., \cite{bearce2010b}). In this lighting, perhaps the U.S. is simply keen on stimulating economic growth in recipient countries since there is evidence that the internet is beneficial for developing economies (e.g., see \cite{wallsten2005}). However, economic motivations also do not explain why the U.S. should be opposed to Chinese spending. In fact, it would seem that the U.S. should theoretically be in favor of Chinese aid since there is evidence that Chinese aid procures economic growth in recipient countries (\cite{dreher2021}).
 
@@ -83,7 +95,7 @@ I contend that an explanation of current U.S. foreign spending behavior must add
 
 If this is true, it should also be true that the U.S. is spending more in countries with more liberal internet governance since these are the countries that most allow for the use of U.S. technology. Further, these countries are likely not being invested in by China, whose aid is suspected on negatively affecting internet governance (e.g., \cite{triolo2020}; \cite{hillman2021}; \cite{u.s.departmentofstate2022}).
 
-Internet governance was defined in the second phase of the World Summit on the Information Society (WSIS), a meeting led by the UN's International Telecommunication Union (ITU), which was held in Tunis, Tunisia in 2005. It is ``the development and application by governments, the private sector and civil society, in their respective roles, of shared principles, norms, rules, decision-making procedures, and programmes that shape the evolution and use of the Internet'' \nocite{worldsummitontheinformationsociety2005} (World Summit on the Information Society 2005, item 34). Essentially, internet governance refers to the way in which governments, firms, and citizens interact with the internet. The U.S. should be expected to allocate more aid to countries with higher measures of internet governance if they are truly bolstering U.S. firm access to technology markets.
+Internet governance was defined in the second phase of the World Summit on the Information Society (WSIS), a meeting led by the UN's International Telecommunication Union (ITU), which was held in Tunis, Tunisia in 2005. It is ``the development and application by governments, the private sector and civil society, in their respective roles, of shared principles, norms, rules, decision-making procedures, and programmes that shape the evolution and use of the Internet'' (\cite{worldsummitontheinformationsociety2005}, item 34). Essentially, internet governance refers to the way in which governments, firms, and citizens interact with the internet. The U.S. should be expected to allocate more aid to countries with higher measures of internet governance if they are truly bolstering U.S. firm access to technology markets.
 
 \section*{Empirics}
 Restating the implications of my argument, U.S. foreign aid should be directly related to recipient country internet governance since the U.S. is trying to build infrastructure that allows for an economically and politically liberal environment for U.S. technology to thrive. These same environments are most likely to exist in a country not financed by China, since China is sharing technology along with its money that could negatively affect recipient internet governance. Thus I will evaluate the following hypotheses:
