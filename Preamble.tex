@@ -1,0 +1,47 @@
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathtools,amssymb,amsthm}
+\usepackage{setspace}
+\doublespacing
+\usepackage[colorlinks,citecolor=cyan,urlcolor=blue,bookmarks=false,hypertexnames=true]{hyperref}
+\usepackage{footmisc}
+\renewcommand{\footnotelayout}{\setstretch{1.75}}
+\usepackage{footmisc}
+\renewcommand{\footnotesize}{\normalsize}
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,shapes.symbols,chains}
+\usepackage{blindtext}
+\usepackage{istgame}
+\usepackage[backend=biber, style=authoryear, maxbibnames=99,uniquelist=false]{biblatex}
+\renewbibmacro{in:}{}
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}
+  \setunit*{\addnbthinspace}
+  \printfield{number}
+  \setunit{\addcomma\space}
+  \printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\AtEveryBibitem{
+  \clearfield{issn}
+  \clearfield{month}
+  \clearfield{urlyear}
+  \clearlist{language}
+  \clearfield{note}
+  \clearfield{month}
+  \clearfield{day}
+  \ifentrytype{online}{}{
+    \clearfield{url}
+  }
+}
+\DeclareCiteCommand{\citeyear}
+    {\usebibmacro{prenote}}
+    {\bibhyperref{\printfield{year}}\bibhyperref{\printfield{extrayear}}}
+    {\multicitedelim}
+    {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\citeyearpar}[\mkbibparens]
+    {\usebibmacro{prenote}}
+    {\bibhyperref{\printfield{year}}\bibhyperref{\printfield{extrayear}}}
+    {\multicitedelim}
+    {\usebibmacro{postnote}}
